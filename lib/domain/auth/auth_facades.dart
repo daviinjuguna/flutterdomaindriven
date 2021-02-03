@@ -9,7 +9,7 @@ abstract class AuthFacade {
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
     @required EmailAddress emailAddress,
     @required Password password,
-    @required Name name,
+    // @required Name name,
   });
   Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword({
     @required EmailAddress emailAddress,

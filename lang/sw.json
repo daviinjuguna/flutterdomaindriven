@@ -1,0 +1,16 @@
+{
+      "login":"INGIA",
+      "register":"ANDIKISHA",
+      "sign_in":"Ingia",
+      "email":"Barua pepe",
+      "password":"Nenosiri",
+      "invalid_email":"Barua pepe batili",
+      "invalid_password":"Nywila batili",
+      "login_google":"INGIA NA GOOGLE",
+      "cancelled":"Imeghairiwa",
+      "server_error":"Hitilafu ya seva",
+      "email_in_use":"Barua pepe tayari inatumika",
+      "inv_email_pass":"Mchanganyiko batili wa barua pepe na nywila",
+      "language":"Lugha"
+
+}

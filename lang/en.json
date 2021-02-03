@@ -1,0 +1,15 @@
+{
+      "login":"SIGN IN",
+      "register":"REGISTER",
+      "sign_in":"Sign In",
+      "email":"Email",
+      "password":"Password",
+      "invalid_email":"Invalid Email",
+      "invalid_password":"Invalid Pasword",
+      "login_google":"SIGN IN WITH GOOGLE",
+      "cancelled":"Cancelled",
+      "server_error":"Server error",
+      "email_in_use":"Email already in use",
+      "inv_email_pass":"Invalid email and password combination",
+      "language":"Language"
+}
