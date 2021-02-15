@@ -29,6 +29,7 @@ class FirebaseAuthFacade implements AuthFacade {
     EmailAddress emailAddress,
     Password password,
   }) async {
+    // _firebaseAuth.currentUser().then(()=>);
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
         email: emailAddress.getOrCrash(),

@@ -1,3 +1,4 @@
+import 'package:enotes/presentation/notes/note_overview/note_overview_page.dart';
 import 'package:enotes/presentation/sign_in/sign_in_page.dart';
 import 'package:enotes/presentation/splash/splash_page.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => SplashPage());
       case '/login':
         return MaterialPageRoute(builder: (_) => SignInPage());
+      case '/note':
+        return MaterialPageRoute(builder: (_) => NoteOverviewPage());
+      case '/note_form':
+        
       default:
         return _errorRoute();
     }
