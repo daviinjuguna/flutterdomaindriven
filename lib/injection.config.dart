@@ -15,9 +15,14 @@ import 'application/auth/auth_bloc.dart';
 import 'domain/auth/auth_facades.dart';
 import 'infrastructure/auth/firebase_auth_facade.dart';
 import 'infrastructure/core/firebase_injectable_module.dart';
+import 'domain/notes/note_repository.dart';
 import 'application/language/language_bloc.dart';
 import 'domain/lang/language_facade.dart';
 import 'infrastructure/lang/language_facade_impl.dart';
+import 'application/notes/note_actor/note_actor_bloc.dart';
+import 'application/notes/note_form/note_form_bloc.dart';
+import 'infrastructure/notes/note_repository.dart';
+import 'application/notes/note_watcher/note_watcher_bloc.dart';
 import 'application/sign_in/sign_in_bloc.dart';
 
 /// adds generated dependencies
@@ -33,6 +38,14 @@ Future<GetIt> $initGetIt(
   gh.lazySingleton<FirebaseAuth>(() => firebaseInjectableModule.firebaseAuth);
   gh.lazySingleton<FirebaseFirestore>(() => firebaseInjectableModule.firestore);
   gh.lazySingleton<GoogleSignIn>(() => firebaseInjectableModule.googleSignIn);
+  gh.lazySingleton<INoteRepository>(
+      () => NoteRepository(firestore: get<FirebaseFirestore>()));
+  gh.factory<NoteActorBloc>(
+      () => NoteActorBloc(noteRepository: get<INoteRepository>()));
+  gh.factory<NoteFormBloc>(
+      () => NoteFormBloc(noteRepository: get<INoteRepository>()));
+  gh.factory<NoteWatcherBloc>(
+      () => NoteWatcherBloc(noteRepository: get<INoteRepository>()));
   final resolvedSharedPreferences = await firebaseInjectableModule.prefs;
   gh.factory<SharedPreferences>(() => resolvedSharedPreferences);
   gh.lazySingleton<AuthFacade>(() => FirebaseAuthFacade(

@@ -3,6 +3,7 @@ import 'package:enotes/domain/auth/auth_facades.dart';
 import 'package:enotes/domain/core/error.dart';
 import 'package:enotes/injection.dart';
 
+
 extension FirestoreX on FirebaseFirestore {
   Future<DocumentReference> userDocument() async {
     final userOption = await getIt<AuthFacade>().getSignedInUser();
@@ -16,3 +17,5 @@ extension FirestoreX on FirebaseFirestore {
 extension DocumentReferenceX on DocumentReference {
   CollectionReference get noteCollection => collection('notes');
 }
+
+// class BLABLE{}
