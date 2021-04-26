@@ -10,10 +10,10 @@ class SignInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('${AppLocalizations.of(context).translate("sign_in")}'),
+        title: Text('${AppLocalizations.of(context)!.translate("sign_in")}'),
       ),
       body: BlocProvider(
-        create: (context) => getIt<SignInBloc>(),
+        create: (context) => getIt.get<SignInBloc>(),
         child: SignInForm(),
       ),
     );

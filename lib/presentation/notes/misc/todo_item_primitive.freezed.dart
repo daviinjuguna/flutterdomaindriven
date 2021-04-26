@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'todo_item.dart';
+part of 'todo_item_primitive.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,12 +13,12 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$TodoItemTearOff {
-  const _$TodoItemTearOff();
+class _$TodoItemPrimitiveTearOff {
+  const _$TodoItemPrimitiveTearOff();
 
-  _TodoItem call(
-      {required UniqueId id, required TodoName name, required bool done}) {
-    return _TodoItem(
+  _TodoItemPrimitive call(
+      {required UniqueId id, required String name, required bool done}) {
+    return _TodoItemPrimitive(
       id: id,
       name: name,
       done: done,
@@ -27,33 +27,35 @@ class _$TodoItemTearOff {
 }
 
 /// @nodoc
-const $TodoItem = _$TodoItemTearOff();
+const $TodoItemPrimitive = _$TodoItemPrimitiveTearOff();
 
 /// @nodoc
-mixin _$TodoItem {
+mixin _$TodoItemPrimitive {
   UniqueId get id => throw _privateConstructorUsedError;
-  TodoName get name => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   bool get done => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TodoItemCopyWith<TodoItem> get copyWith =>
+  $TodoItemPrimitiveCopyWith<TodoItemPrimitive> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TodoItemCopyWith<$Res> {
-  factory $TodoItemCopyWith(TodoItem value, $Res Function(TodoItem) then) =
-      _$TodoItemCopyWithImpl<$Res>;
-  $Res call({UniqueId id, TodoName name, bool done});
+abstract class $TodoItemPrimitiveCopyWith<$Res> {
+  factory $TodoItemPrimitiveCopyWith(
+          TodoItemPrimitive value, $Res Function(TodoItemPrimitive) then) =
+      _$TodoItemPrimitiveCopyWithImpl<$Res>;
+  $Res call({UniqueId id, String name, bool done});
 }
 
 /// @nodoc
-class _$TodoItemCopyWithImpl<$Res> implements $TodoItemCopyWith<$Res> {
-  _$TodoItemCopyWithImpl(this._value, this._then);
+class _$TodoItemPrimitiveCopyWithImpl<$Res>
+    implements $TodoItemPrimitiveCopyWith<$Res> {
+  _$TodoItemPrimitiveCopyWithImpl(this._value, this._then);
 
-  final TodoItem _value;
+  final TodoItemPrimitive _value;
   // ignore: unused_field
-  final $Res Function(TodoItem) _then;
+  final $Res Function(TodoItemPrimitive) _then;
 
   @override
   $Res call({
@@ -69,7 +71,7 @@ class _$TodoItemCopyWithImpl<$Res> implements $TodoItemCopyWith<$Res> {
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as TodoName,
+              as String,
       done: done == freezed
           ? _value.done
           : done // ignore: cast_nullable_to_non_nullable
@@ -79,21 +81,25 @@ class _$TodoItemCopyWithImpl<$Res> implements $TodoItemCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$TodoItemCopyWith<$Res> implements $TodoItemCopyWith<$Res> {
-  factory _$TodoItemCopyWith(_TodoItem value, $Res Function(_TodoItem) then) =
-      __$TodoItemCopyWithImpl<$Res>;
+abstract class _$TodoItemPrimitiveCopyWith<$Res>
+    implements $TodoItemPrimitiveCopyWith<$Res> {
+  factory _$TodoItemPrimitiveCopyWith(
+          _TodoItemPrimitive value, $Res Function(_TodoItemPrimitive) then) =
+      __$TodoItemPrimitiveCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId id, TodoName name, bool done});
+  $Res call({UniqueId id, String name, bool done});
 }
 
 /// @nodoc
-class __$TodoItemCopyWithImpl<$Res> extends _$TodoItemCopyWithImpl<$Res>
-    implements _$TodoItemCopyWith<$Res> {
-  __$TodoItemCopyWithImpl(_TodoItem _value, $Res Function(_TodoItem) _then)
-      : super(_value, (v) => _then(v as _TodoItem));
+class __$TodoItemPrimitiveCopyWithImpl<$Res>
+    extends _$TodoItemPrimitiveCopyWithImpl<$Res>
+    implements _$TodoItemPrimitiveCopyWith<$Res> {
+  __$TodoItemPrimitiveCopyWithImpl(
+      _TodoItemPrimitive _value, $Res Function(_TodoItemPrimitive) _then)
+      : super(_value, (v) => _then(v as _TodoItemPrimitive));
 
   @override
-  _TodoItem get _value => super._value as _TodoItem;
+  _TodoItemPrimitive get _value => super._value as _TodoItemPrimitive;
 
   @override
   $Res call({
@@ -101,7 +107,7 @@ class __$TodoItemCopyWithImpl<$Res> extends _$TodoItemCopyWithImpl<$Res>
     Object? name = freezed,
     Object? done = freezed,
   }) {
-    return _then(_TodoItem(
+    return _then(_TodoItemPrimitive(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -109,7 +115,7 @@ class __$TodoItemCopyWithImpl<$Res> extends _$TodoItemCopyWithImpl<$Res>
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as TodoName,
+              as String,
       done: done == freezed
           ? _value.done
           : done // ignore: cast_nullable_to_non_nullable
@@ -120,26 +126,27 @@ class __$TodoItemCopyWithImpl<$Res> extends _$TodoItemCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TodoItem extends _TodoItem {
-  const _$_TodoItem({required this.id, required this.name, required this.done})
+class _$_TodoItemPrimitive extends _TodoItemPrimitive {
+  _$_TodoItemPrimitive(
+      {required this.id, required this.name, required this.done})
       : super._();
 
   @override
   final UniqueId id;
   @override
-  final TodoName name;
+  final String name;
   @override
   final bool done;
 
   @override
   String toString() {
-    return 'TodoItem(id: $id, name: $name, done: $done)';
+    return 'TodoItemPrimitive(id: $id, name: $name, done: $done)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TodoItem &&
+        (other is _TodoItemPrimitive &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.name, name) ||
@@ -157,25 +164,25 @@ class _$_TodoItem extends _TodoItem {
 
   @JsonKey(ignore: true)
   @override
-  _$TodoItemCopyWith<_TodoItem> get copyWith =>
-      __$TodoItemCopyWithImpl<_TodoItem>(this, _$identity);
+  _$TodoItemPrimitiveCopyWith<_TodoItemPrimitive> get copyWith =>
+      __$TodoItemPrimitiveCopyWithImpl<_TodoItemPrimitive>(this, _$identity);
 }
 
-abstract class _TodoItem extends TodoItem {
-  const factory _TodoItem(
+abstract class _TodoItemPrimitive extends TodoItemPrimitive {
+  factory _TodoItemPrimitive(
       {required UniqueId id,
-      required TodoName name,
-      required bool done}) = _$_TodoItem;
-  const _TodoItem._() : super._();
+      required String name,
+      required bool done}) = _$_TodoItemPrimitive;
+  _TodoItemPrimitive._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
   @override
-  TodoName get name => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   @override
   bool get done => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$TodoItemCopyWith<_TodoItem> get copyWith =>
+  _$TodoItemPrimitiveCopyWith<_TodoItemPrimitive> get copyWith =>
       throw _privateConstructorUsedError;
 }

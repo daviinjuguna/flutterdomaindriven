@@ -12,7 +12,7 @@ part 'language_bloc.freezed.dart';
 
 @injectable
 class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
-  LanguageBloc({@required LanguageFacade facade})
+  LanguageBloc({required LanguageFacade facade})
       : _facade = facade,
         super(LanguageState.initial());
   final LanguageFacade _facade;

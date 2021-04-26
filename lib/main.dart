@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:injectable/injectable.dart';
+import 'package:overlay_support/overlay_support.dart';
 
 import 'application/auth/auth_bloc.dart';
 import 'presentation/routes/route_generator.dart';
@@ -14,7 +15,7 @@ import 'presentation/routes/route_generator.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
-  await configureInjection(Environment.prod);
+  await configureInjection();
   await Firebase.initializeApp();
   runApp(MyApp());
 }
@@ -25,7 +26,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Locale _locale;
+  Locale? _locale;
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +34,11 @@ class _MyAppState extends State<MyApp> {
       providers: [
         BlocProvider(
           create: (context) =>
-              getIt<LanguageBloc>()..add(const LanguageEvent.started()),
+              getIt.get<LanguageBloc>()..add(const LanguageEvent.started()),
         ),
         BlocProvider(
           create: (context) =>
-              getIt<AuthBloc>()..add(const AuthEvent.authCheckRequested()),
+              getIt.get<AuthBloc>()..add(const AuthEvent.authCheckRequested()),
         )
       ],
       child: BlocBuilder<LanguageBloc, LanguageState>(
@@ -51,36 +52,38 @@ class _MyAppState extends State<MyApp> {
               _locale = new Locale("en");
             },
           );
-          return MaterialApp(
-            locale: _locale,
-            title: 'Flutter Demo',
-            theme: ThemeData(
-              primarySwatch: Colors.blue,
-              accentColor: Colors.blueAccent,
-              visualDensity: VisualDensity.adaptivePlatformDensity,
-              floatingActionButtonTheme: FloatingActionButtonThemeData(
-                backgroundColor: Colors.blue[900],
-              ),
-              inputDecorationTheme: InputDecorationTheme(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
+          return OverlaySupport(
+            child: MaterialApp(
+              locale: _locale,
+              title: 'Flutter Demo',
+              theme: ThemeData(
+                primarySwatch: Colors.blue,
+                accentColor: Colors.blueAccent,
+                visualDensity: VisualDensity.adaptivePlatformDensity,
+                floatingActionButtonTheme: FloatingActionButtonThemeData(
+                  backgroundColor: Colors.blue[900],
+                ),
+                inputDecorationTheme: InputDecorationTheme(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                 ),
               ),
+              supportedLocales: [
+                Locale("en", "US"), //english
+                Locale("sw", "TZ"), //swahili
+              ],
+              localizationsDelegates: [
+                AppLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              debugShowCheckedModeBanner: false,
+              initialRoute: '/',
+              onGenerateRoute: RouteGenerator.generateRoute,
+              // home: MyHomePage(title: 'Flutter Demo Home Page'),
             ),
-            supportedLocales: [
-              Locale("en", "US"), //english
-              Locale("sw", "TZ"), //swahili
-            ],
-            localizationsDelegates: [
-              AppLocalizations.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            debugShowCheckedModeBanner: false,
-            initialRoute: '/',
-            onGenerateRoute: RouteGenerator.generateRoute,
-            // home: MyHomePage(title: 'Flutter Demo Home Page'),
           );
         },
       ),

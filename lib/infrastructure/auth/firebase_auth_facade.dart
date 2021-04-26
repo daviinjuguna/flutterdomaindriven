@@ -4,7 +4,6 @@ import 'package:enotes/domain/auth/user.dart';
 import 'package:enotes/domain/auth/inputs.dart';
 import 'package:enotes/domain/auth/auth_failure.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide User;
-import 'package:flutter/cupertino.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 import './firebase_user_mapper.dart';
@@ -15,9 +14,9 @@ class FirebaseAuthFacade implements AuthFacade {
   final GoogleSignIn _googleSignIn;
 
   FirebaseAuthFacade({
-    @required FirebaseAuth firebaseAuth,
-    @required GoogleSignIn googleSignIn,
-  })  : _firebaseAuth = firebaseAuth,
+    required FirebaseAuth firebaseAuth,
+    required GoogleSignIn googleSignIn,
+  })   : _firebaseAuth = firebaseAuth,
         _googleSignIn = googleSignIn;
 
   @override
@@ -26,8 +25,8 @@ class FirebaseAuthFacade implements AuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
-    EmailAddress emailAddress,
-    Password password,
+    required EmailAddress emailAddress,
+    required Password password,
   }) async {
     // _firebaseAuth.currentUser().then(()=>);
     try {
@@ -47,8 +46,8 @@ class FirebaseAuthFacade implements AuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword({
-    EmailAddress emailAddress,
-    Password password,
+    required EmailAddress emailAddress,
+    required Password password,
   }) async {
     try {
       await _firebaseAuth.signInWithEmailAndPassword(

@@ -9,15 +9,15 @@ import 'package:kt_dart/collection.dart';
 part 'note.freezed.dart';
 
 @freezed //entity
-abstract class Note implements _$Note {
-  const Note._();
-
+class Note with _$Note {
   const factory Note({
-    @required UniqueId id,
-    @required NoteBody body,
-    @required NoteColor color,
-    @required List3<TodoItem> todos,
+    required UniqueId id,
+    required NoteBody body,
+    required NoteColor color,
+    required List3<TodoItem> todos,
   }) = _Note;
+
+  const Note._();
 
   factory Note.empty() => Note(
         id: UniqueId(),

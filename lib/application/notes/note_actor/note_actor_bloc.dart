@@ -14,8 +14,8 @@ part 'note_actor_bloc.freezed.dart';
 @injectable
 class NoteActorBloc extends Bloc<NoteActorEvent, NoteActorState> {
   NoteActorBloc({
-    @required INoteRepository noteRepository,
-  })  : _noteRepository = noteRepository,
+    required INoteRepository noteRepository,
+  })   : _noteRepository = noteRepository,
         super(NoteActorState.initial());
 
   final INoteRepository _noteRepository;

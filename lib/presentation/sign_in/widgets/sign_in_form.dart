@@ -5,7 +5,7 @@ import 'package:enotes/application/sign_in/sign_in_bloc.dart';
 import 'package:enotes/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flushbar/flushbar_helper.dart';
+import 'package:overlay_support/overlay_support.dart';
 
 class SignInForm extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class SignInForm extends StatefulWidget {
 
 class _SignInFormState extends State<SignInForm> {
   List<String> _language = [];
-  String _lang;
+  String? _lang;
   @override
   void initState() {
     _language.add("English");
@@ -30,18 +30,43 @@ class _SignInFormState extends State<SignInForm> {
           () {},
           (either) => either.fold(
             (failure) {
-              FlushbarHelper.createError(
-                message: failure.map(
-                  cancelledByUser: (_) =>
-                      '${AppLocalizations.of(context).translate("cancelled")}',
-                  serverError: (_) =>
-                      '${AppLocalizations.of(context).translate("server_error")}',
-                  emailAlreadyInUse: (_) =>
-                      '${AppLocalizations.of(context).translate("email_in_use")}',
-                  invalidEmailAndPasswordCombination: (_) =>
-                      '${AppLocalizations.of(context).translate("inv_email_pass")}',
+              showSimpleNotification(
+                Text(
+                  "ERROR",
+                  style: TextStyle(color: Colors.white),
                 ),
-              ).show(context);
+                subtitle: Text(
+                  failure.map(
+                    cancelledByUser: (_) =>
+                        '${AppLocalizations.of(context)!.translate("cancelled")}',
+                    serverError: (_) =>
+                        '${AppLocalizations.of(context)!.translate("server_error")}',
+                    emailAlreadyInUse: (_) =>
+                        '${AppLocalizations.of(context)!.translate("email_in_use")}',
+                    invalidEmailAndPasswordCombination: (_) =>
+                        '${AppLocalizations.of(context)!.translate("inv_email_pass")}',
+                  ),
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.white,
+                  ),
+                ),
+                position: NotificationPosition.bottom,
+                background: Colors.red[400],
+                autoDismiss: true,
+              );
+              // FlushbarHelper.createError(
+              // message: failure.map(
+              //   cancelledByUser: (_) =>
+              //       '${AppLocalizations.of(context).translate("cancelled")}',
+              //   serverError: (_) =>
+              //       '${AppLocalizations.of(context).translate("server_error")}',
+              //   emailAlreadyInUse: (_) =>
+              //       '${AppLocalizations.of(context).translate("email_in_use")}',
+              //   invalidEmailAndPasswordCombination: (_) =>
+              //       '${AppLocalizations.of(context).translate("inv_email_pass")}',
+              // ),
+              // ).show(context);
             },
             (_) {
               // ExtendedNavigator.of(context).replace(Routes.notesOverviewPage);
@@ -70,7 +95,7 @@ class _SignInFormState extends State<SignInForm> {
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.email),
                   labelText:
-                      '${AppLocalizations.of(context).translate("email")}',
+                      '${AppLocalizations.of(context)!.translate("email")}',
                 ),
                 autocorrect: false,
                 onChanged: (value) => context
@@ -80,7 +105,7 @@ class _SignInFormState extends State<SignInForm> {
                     context.read<SignInBloc>().state.emailAddress.value.fold(
                           (f) => f.maybeMap(
                             invalidEmail: (_) =>
-                                '${AppLocalizations.of(context).translate("invalid_email")}',
+                                '${AppLocalizations.of(context)!.translate("invalid_email")}',
                             orElse: () => null,
                           ),
                           (_) => null,
@@ -91,7 +116,7 @@ class _SignInFormState extends State<SignInForm> {
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.lock),
                   labelText:
-                      '${AppLocalizations.of(context).translate("password")}',
+                      '${AppLocalizations.of(context)!.translate("password")}',
                 ),
                 autocorrect: false,
                 obscureText: true,
@@ -102,7 +127,7 @@ class _SignInFormState extends State<SignInForm> {
                     context.read<SignInBloc>().state.password.value.fold(
                           (f) => f.maybeMap(
                             shortPassword: (_) =>
-                                '${AppLocalizations.of(context).translate("invalid_password")}',
+                                '${AppLocalizations.of(context)!.translate("invalid_password")}',
                             orElse: () => null,
                           ),
                           (_) => null,
@@ -112,7 +137,7 @@ class _SignInFormState extends State<SignInForm> {
               Row(
                 children: [
                   Expanded(
-                    child: FlatButton(
+                    child: TextButton(
                       onPressed: () {
                         context.read<SignInBloc>().add(
                               const SignInEvent
@@ -120,11 +145,11 @@ class _SignInFormState extends State<SignInForm> {
                             );
                       },
                       child: Text(
-                          '${AppLocalizations.of(context).translate("login")}'),
+                          '${AppLocalizations.of(context)!.translate("login")}'),
                     ),
                   ),
                   Expanded(
-                    child: FlatButton(
+                    child: TextButton(
                       onPressed: () {
                         context.read<SignInBloc>().add(
                               const SignInEvent
@@ -132,12 +157,12 @@ class _SignInFormState extends State<SignInForm> {
                             );
                       },
                       child: Text(
-                          '${AppLocalizations.of(context).translate("register")}'),
+                          '${AppLocalizations.of(context)!.translate("register")}'),
                     ),
                   ),
                 ],
               ),
-              RaisedButton(
+              MaterialButton(
                 onPressed: () {
                   context
                       .read<SignInBloc>()
@@ -145,7 +170,7 @@ class _SignInFormState extends State<SignInForm> {
                 },
                 color: Colors.lightBlue,
                 child: Text(
-                  '${AppLocalizations.of(context).translate("login_google")}',
+                  '${AppLocalizations.of(context)!.translate("login_google")}',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -161,8 +186,7 @@ class _SignInFormState extends State<SignInForm> {
                     dropdownColor: Colors.white,
                     value: _lang,
                     hint: Text(
-                      AppLocalizations.of(context).translate("language"),
-                      
+                      AppLocalizations.of(context)!.translate("language")!,
                     ),
                     icon: Icon(
                       Icons.arrow_drop_down,
@@ -180,15 +204,19 @@ class _SignInFormState extends State<SignInForm> {
                     onChanged: (value) {
                       FocusScope.of(context).requestFocus(FocusNode());
                       setState(() {
-                        _lang = value;
+                        _lang = value!;
                       });
 
                       if (value == "English") {
-                        context.read<LanguageBloc>().add(LanguageEvent.change(Locale("en")));
+                        context
+                            .read<LanguageBloc>()
+                            .add(LanguageEvent.change(Locale("en")));
                         // BlocProvider.of<SplashBloc>(context)
                         //   ..add(ChangeLanguageEvent(type: Locale("en")));
                       } else {
-                        context.read<LanguageBloc>().add(LanguageEvent.change(Locale("sw")));
+                        context
+                            .read<LanguageBloc>()
+                            .add(LanguageEvent.change(Locale("sw")));
                         // BlocProvider.of<SplashBloc>(context)
                         //   ..add(ChangeLanguageEvent(type: Locale("es")));
                       }

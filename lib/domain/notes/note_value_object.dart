@@ -71,7 +71,6 @@ class List3<T> extends ValueObject<KtList<T>> {
   static const maxLength = 5; //size of todo list
 
   factory List3(KtList<T> input) {
-    assert(input != null);
     return List3._(
       validateMaxListLength(input, maxLength),
     );

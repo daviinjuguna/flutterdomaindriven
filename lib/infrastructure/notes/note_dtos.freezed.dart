@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'note_dtos.dart';
 
@@ -8,6 +8,10 @@ part of 'note_dtos.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 NoteDtos _$NoteDtosFromJson(Map<String, dynamic> json) {
   return _NoteDtos.fromJson(json);
 }
@@ -16,13 +20,12 @@ NoteDtos _$NoteDtosFromJson(Map<String, dynamic> json) {
 class _$NoteDtosTearOff {
   const _$NoteDtosTearOff();
 
-// ignore: unused_element
   _NoteDtos call(
-      {@JsonKey(ignore: true) String id,
-      @required String body,
-      @required int color,
-      @required List<TodoItemDto> todos,
-      @required @ServerTimestampConverter() FieldValue serverTimeStamp}) {
+      {@JsonKey(ignore: true) String? id,
+      required String body,
+      required int color,
+      required List<TodoItemDto> todos,
+      @ServerTimestampConverter() required FieldValue serverTimeStamp}) {
     return _NoteDtos(
       id: id,
       body: body,
@@ -32,29 +35,28 @@ class _$NoteDtosTearOff {
     );
   }
 
-// ignore: unused_element
   NoteDtos fromJson(Map<String, Object> json) {
     return NoteDtos.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $NoteDtos = _$NoteDtosTearOff();
 
 /// @nodoc
 mixin _$NoteDtos {
   @JsonKey(ignore: true)
-  String get id;
-  String get body;
-  int get color;
-  List<TodoItemDto> get todos;
+  String? get id => throw _privateConstructorUsedError;
+  String get body => throw _privateConstructorUsedError;
+  int get color => throw _privateConstructorUsedError;
+  List<TodoItemDto> get todos => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
-  FieldValue get serverTimeStamp;
+  FieldValue get serverTimeStamp => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $NoteDtosCopyWith<NoteDtos> get copyWith;
+  $NoteDtosCopyWith<NoteDtos> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -62,7 +64,7 @@ abstract class $NoteDtosCopyWith<$Res> {
   factory $NoteDtosCopyWith(NoteDtos value, $Res Function(NoteDtos) then) =
       _$NoteDtosCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(ignore: true) String id,
+      {@JsonKey(ignore: true) String? id,
       String body,
       int color,
       List<TodoItemDto> todos,
@@ -79,20 +81,33 @@ class _$NoteDtosCopyWithImpl<$Res> implements $NoteDtosCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object body = freezed,
-    Object color = freezed,
-    Object todos = freezed,
-    Object serverTimeStamp = freezed,
+    Object? id = freezed,
+    Object? body = freezed,
+    Object? color = freezed,
+    Object? todos = freezed,
+    Object? serverTimeStamp = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      body: body == freezed ? _value.body : body as String,
-      color: color == freezed ? _value.color : color as int,
-      todos: todos == freezed ? _value.todos : todos as List<TodoItemDto>,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String,
+      color: color == freezed
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as int,
+      todos: todos == freezed
+          ? _value.todos
+          : todos // ignore: cast_nullable_to_non_nullable
+              as List<TodoItemDto>,
       serverTimeStamp: serverTimeStamp == freezed
           ? _value.serverTimeStamp
-          : serverTimeStamp as FieldValue,
+          : serverTimeStamp // ignore: cast_nullable_to_non_nullable
+              as FieldValue,
     ));
   }
 }
@@ -103,7 +118,7 @@ abstract class _$NoteDtosCopyWith<$Res> implements $NoteDtosCopyWith<$Res> {
       __$NoteDtosCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(ignore: true) String id,
+      {@JsonKey(ignore: true) String? id,
       String body,
       int color,
       List<TodoItemDto> todos,
@@ -121,46 +136,54 @@ class __$NoteDtosCopyWithImpl<$Res> extends _$NoteDtosCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object body = freezed,
-    Object color = freezed,
-    Object todos = freezed,
-    Object serverTimeStamp = freezed,
+    Object? id = freezed,
+    Object? body = freezed,
+    Object? color = freezed,
+    Object? todos = freezed,
+    Object? serverTimeStamp = freezed,
   }) {
     return _then(_NoteDtos(
-      id: id == freezed ? _value.id : id as String,
-      body: body == freezed ? _value.body : body as String,
-      color: color == freezed ? _value.color : color as int,
-      todos: todos == freezed ? _value.todos : todos as List<TodoItemDto>,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String,
+      color: color == freezed
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as int,
+      todos: todos == freezed
+          ? _value.todos
+          : todos // ignore: cast_nullable_to_non_nullable
+              as List<TodoItemDto>,
       serverTimeStamp: serverTimeStamp == freezed
           ? _value.serverTimeStamp
-          : serverTimeStamp as FieldValue,
+          : serverTimeStamp // ignore: cast_nullable_to_non_nullable
+              as FieldValue,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_NoteDtos extends _NoteDtos {
   const _$_NoteDtos(
       {@JsonKey(ignore: true) this.id,
-      @required this.body,
-      @required this.color,
-      @required this.todos,
-      @required @ServerTimestampConverter() this.serverTimeStamp})
-      : assert(body != null),
-        assert(color != null),
-        assert(todos != null),
-        assert(serverTimeStamp != null),
-        super._();
+      required this.body,
+      required this.color,
+      required this.todos,
+      @ServerTimestampConverter() required this.serverTimeStamp})
+      : super._();
 
   factory _$_NoteDtos.fromJson(Map<String, dynamic> json) =>
       _$_$_NoteDtosFromJson(json);
 
   @override
   @JsonKey(ignore: true)
-  final String id;
+  final String? id;
   @override
   final String body;
   @override
@@ -214,32 +237,33 @@ class _$_NoteDtos extends _NoteDtos {
 }
 
 abstract class _NoteDtos extends NoteDtos {
-  const _NoteDtos._() : super._();
   const factory _NoteDtos(
-          {@JsonKey(ignore: true) String id,
-          @required String body,
-          @required int color,
-          @required List<TodoItemDto> todos,
-          @required @ServerTimestampConverter() FieldValue serverTimeStamp}) =
+          {@JsonKey(ignore: true) String? id,
+          required String body,
+          required int color,
+          required List<TodoItemDto> todos,
+          @ServerTimestampConverter() required FieldValue serverTimeStamp}) =
       _$_NoteDtos;
+  const _NoteDtos._() : super._();
 
   factory _NoteDtos.fromJson(Map<String, dynamic> json) = _$_NoteDtos.fromJson;
 
   @override
   @JsonKey(ignore: true)
-  String get id;
+  String? get id => throw _privateConstructorUsedError;
   @override
-  String get body;
+  String get body => throw _privateConstructorUsedError;
   @override
-  int get color;
+  int get color => throw _privateConstructorUsedError;
   @override
-  List<TodoItemDto> get todos;
+  List<TodoItemDto> get todos => throw _privateConstructorUsedError;
   @override
   @ServerTimestampConverter()
-  FieldValue get serverTimeStamp;
+  FieldValue get serverTimeStamp => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$NoteDtosCopyWith<_NoteDtos> get copyWith;
+  _$NoteDtosCopyWith<_NoteDtos> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 TodoItemDto _$TodoItemDtoFromJson(Map<String, dynamic> json) {
@@ -250,9 +274,8 @@ TodoItemDto _$TodoItemDtoFromJson(Map<String, dynamic> json) {
 class _$TodoItemDtoTearOff {
   const _$TodoItemDtoTearOff();
 
-// ignore: unused_element
   _TodoItemDto call(
-      {@required String todoId, @required String name, @required bool done}) {
+      {required String todoId, required String name, required bool done}) {
     return _TodoItemDto(
       todoId: todoId,
       name: name,
@@ -260,25 +283,24 @@ class _$TodoItemDtoTearOff {
     );
   }
 
-// ignore: unused_element
   TodoItemDto fromJson(Map<String, Object> json) {
     return TodoItemDto.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $TodoItemDto = _$TodoItemDtoTearOff();
 
 /// @nodoc
 mixin _$TodoItemDto {
-  String get todoId;
-  String get name;
-  bool get done;
+  String get todoId => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  bool get done => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TodoItemDtoCopyWith<TodoItemDto> get copyWith;
+  $TodoItemDtoCopyWith<TodoItemDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -299,14 +321,23 @@ class _$TodoItemDtoCopyWithImpl<$Res> implements $TodoItemDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object todoId = freezed,
-    Object name = freezed,
-    Object done = freezed,
+    Object? todoId = freezed,
+    Object? name = freezed,
+    Object? done = freezed,
   }) {
     return _then(_value.copyWith(
-      todoId: todoId == freezed ? _value.todoId : todoId as String,
-      name: name == freezed ? _value.name : name as String,
-      done: done == freezed ? _value.done : done as bool,
+      todoId: todoId == freezed
+          ? _value.todoId
+          : todoId // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      done: done == freezed
+          ? _value.done
+          : done // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -333,28 +364,33 @@ class __$TodoItemDtoCopyWithImpl<$Res> extends _$TodoItemDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object todoId = freezed,
-    Object name = freezed,
-    Object done = freezed,
+    Object? todoId = freezed,
+    Object? name = freezed,
+    Object? done = freezed,
   }) {
     return _then(_TodoItemDto(
-      todoId: todoId == freezed ? _value.todoId : todoId as String,
-      name: name == freezed ? _value.name : name as String,
-      done: done == freezed ? _value.done : done as bool,
+      todoId: todoId == freezed
+          ? _value.todoId
+          : todoId // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      done: done == freezed
+          ? _value.done
+          : done // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_TodoItemDto extends _TodoItemDto {
   const _$_TodoItemDto(
-      {@required this.todoId, @required this.name, @required this.done})
-      : assert(todoId != null),
-        assert(name != null),
-        assert(done != null),
-        super._();
+      {required this.todoId, required this.name, required this.done})
+      : super._();
 
   factory _$_TodoItemDto.fromJson(Map<String, dynamic> json) =>
       _$_$_TodoItemDtoFromJson(json);
@@ -402,22 +438,23 @@ class _$_TodoItemDto extends _TodoItemDto {
 }
 
 abstract class _TodoItemDto extends TodoItemDto {
-  const _TodoItemDto._() : super._();
   const factory _TodoItemDto(
-      {@required String todoId,
-      @required String name,
-      @required bool done}) = _$_TodoItemDto;
+      {required String todoId,
+      required String name,
+      required bool done}) = _$_TodoItemDto;
+  const _TodoItemDto._() : super._();
 
   factory _TodoItemDto.fromJson(Map<String, dynamic> json) =
       _$_TodoItemDto.fromJson;
 
   @override
-  String get todoId;
+  String get todoId => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
-  bool get done;
+  bool get done => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$TodoItemDtoCopyWith<_TodoItemDto> get copyWith;
+  _$TodoItemDtoCopyWith<_TodoItemDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

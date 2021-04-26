@@ -17,7 +17,7 @@ class SplashPage extends StatelessWidget {
       },
       child: const Scaffold(
         body: Center(
-          child: CircularProgressIndicator(),
+          child: CircularProgressIndicator.adaptive(),
         ),
       ),
     );

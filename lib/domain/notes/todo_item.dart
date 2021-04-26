@@ -7,14 +7,14 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'todo_item.freezed.dart';
 
 @freezed //entity
-abstract class TodoItem implements _$TodoItem {
-  const TodoItem._();
-
+class TodoItem with _$TodoItem {
   const factory TodoItem({
-    @required UniqueId id,
-    @required TodoName name,
-    @required bool done,
+    required UniqueId id,
+    required TodoName name,
+    required bool done,
   }) = _TodoItem;
+
+  const TodoItem._();
 
   factory TodoItem.empty() => TodoItem(
         id: UniqueId(),

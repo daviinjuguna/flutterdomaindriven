@@ -15,8 +15,8 @@ part 'sign_in_bloc.freezed.dart';
 @injectable
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
   SignInBloc({
-    @required AuthFacade facade,
-  })  : _facade = facade,
+    required AuthFacade facade,
+  })   : _facade = facade,
         super(SignInState.initial());
 
   final AuthFacade _facade;
@@ -27,12 +27,12 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
   ) async* {
     Stream<SignInState> _authenticate(
       Future<Either<AuthFailure, Unit>> Function({
-        @required EmailAddress emailAddress,
-        @required Password password,
+        required EmailAddress emailAddress,
+        required Password password,
       })
           forwardedCall,
     ) async* {
-      Either<AuthFailure, Unit> failureOrSuccess;
+      late Either<AuthFailure, Unit> failureOrSuccess;
 
       final isEmailValid = state.emailAddress.isValid();
       final isPasswordValid = state.password.isValid();

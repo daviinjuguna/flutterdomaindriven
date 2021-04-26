@@ -13,13 +13,13 @@ part 'note_dtos.freezed.dart';
 part 'note_dtos.g.dart';
 
 @freezed
-abstract class NoteDtos implements _$NoteDtos {
+class NoteDtos with _$NoteDtos {
   const factory NoteDtos({
-    @JsonKey(ignore: true) String id,
-    @required String body,
-    @required int color,
-    @required List<TodoItemDto> todos,
-    @required @ServerTimestampConverter() FieldValue serverTimeStamp,
+    @JsonKey(ignore: true) String? id,
+    required String body,
+    required int color,
+    required List<TodoItemDto> todos,
+    @ServerTimestampConverter() required FieldValue serverTimeStamp,
   }) = _NoteDtos;
 
   const NoteDtos._();
@@ -36,10 +36,10 @@ abstract class NoteDtos implements _$NoteDtos {
             .asList(),
         serverTimeStamp: FieldValue.serverTimestamp(),
       );
-      
+
   Note toDomain() {
     return Note(
-      id: UniqueId.fromUniqueString(id),
+      id: UniqueId.fromUniqueString(id!),
       body: NoteBody(body),
       color: NoteColor(Color(color)),
       todos: List3(todos.map((e) => e.toDomain()).toImmutableList()),
@@ -50,7 +50,7 @@ abstract class NoteDtos implements _$NoteDtos {
       _$NoteDtosFromJson(json);
 
   factory NoteDtos.fromFirestore(DocumentSnapshot doc) =>
-      NoteDtos.fromJson(doc.data()).copyWith(id: doc.id);
+      NoteDtos.fromJson(doc.data()!).copyWith(id: doc.id);
 }
 
 //Custom converter
@@ -67,11 +67,11 @@ class ServerTimestampConverter implements JsonConverter<FieldValue, Object> {
 }
 
 @freezed
-abstract class TodoItemDto implements _$TodoItemDto {
+class TodoItemDto with _$TodoItemDto {
   const factory TodoItemDto({
-    @required String todoId,
-    @required String name,
-    @required bool done,
+    required String todoId,
+    required String name,
+    required bool done,
   }) = _TodoItemDto;
 
   const TodoItemDto._();

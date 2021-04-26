@@ -12,10 +12,11 @@ class LanguageFacadeImpl implements LanguageFacade {
   final SharedPreferences _prefs;
 
   Locale _appLocale = Locale('en');
-  LanguageFacadeImpl({@required SharedPreferences prefs}) : _prefs = prefs;
+  LanguageFacadeImpl({required SharedPreferences prefs}) : _prefs = prefs;
 
   @override
-  Future<Either<LanguageFailure, Locale>> changeLanguage({Locale type}) async{
+  Future<Either<LanguageFailure, Locale>> changeLanguage(
+      {required Locale type}) async {
     try {
       if (_appLocale == type) {
         return right(_appLocale);
@@ -36,13 +37,13 @@ class LanguageFacadeImpl implements LanguageFacade {
   }
 
   @override
-  Future<Either<LanguageFailure, Locale>> fetchLocale() async{
+  Future<Either<LanguageFailure, Locale>> fetchLocale() async {
     try {
       if (_prefs.getString('language_code') == null) {
         _appLocale = Locale('en');
         return right(_appLocale);
       }
-      _appLocale = Locale(_prefs.getString('language_code'));
+      _appLocale = Locale(_prefs.getString('language_code')!);
       return right(_appLocale);
     } catch (e) {
       print(e.toString());

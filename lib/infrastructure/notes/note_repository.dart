@@ -5,7 +5,6 @@ import 'package:dartz/dartz.dart';
 import 'package:enotes/domain/notes/note_repository.dart';
 import 'package:enotes/infrastructure/core/firestore_helper.dart';
 import 'package:enotes/infrastructure/notes/note_dtos.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:rxdart/rxdart.dart';
@@ -13,7 +12,7 @@ import 'package:kt_dart/kt.dart';
 
 @LazySingleton(as: INoteRepository)
 class NoteRepository implements INoteRepository {
-  NoteRepository({@required FirebaseFirestore firestore})
+  NoteRepository({required FirebaseFirestore firestore})
       : _firestore = firestore;
 
   final FirebaseFirestore _firestore;
@@ -28,9 +27,10 @@ class NoteRepository implements INoteRepository {
 
       return right(unit);
     } on FirebaseException catch (e) {
-      if (e.message.contains('PERMISSION_DENIED')) {
+      if (e.message!.contains('PERMISSION_DENIED')) {
         return left(const NoteFailure.insufficientPermission());
       } else {
+        print(e.toString());
         return left(const NoteFailure.unexpected());
       }
     }
@@ -46,11 +46,12 @@ class NoteRepository implements INoteRepository {
 
       return right(unit);
     } on FirebaseException catch (e) {
-      if (e.message.contains('PERMISSION_DENIED')) {
+      if (e.message!.contains('PERMISSION_DENIED')) {
         return left(const NoteFailure.insufficientPermission());
-      } else if (e.message.contains('NOT_FOUND')) {
+      } else if (e.message!.contains('NOT_FOUND')) {
         return left(const NoteFailure.unableToUpdate());
       } else {
+        print(e.toString());
         return left(const NoteFailure.unexpected());
       }
     }
@@ -66,11 +67,12 @@ class NoteRepository implements INoteRepository {
 
       return right(unit);
     } on FirebaseException catch (e) {
-      if (e.message.contains('PERMISSION_DENIED')) {
+      if (e.message!.contains('PERMISSION_DENIED')) {
         return left(const NoteFailure.insufficientPermission());
-      } else if (e.message.contains('NOT_FOUND')) {
+      } else if (e.message!.contains('NOT_FOUND')) {
         return left(const NoteFailure.unableToUpdate());
       } else {
+        print(e.toString());
         return left(const NoteFailure.unexpected());
       }
     }
@@ -91,10 +93,11 @@ class NoteRepository implements INoteRepository {
         )
         .onErrorReturnWith(
       (e) {
-        if (e is FirebaseException && e.message.contains('PERMISSION_DENIED')) {
+        if (e is FirebaseException &&
+            e.message!.contains('PERMISSION_DENIED')) {
           return left(const NoteFailure.insufficientPermission());
         } else {
-          // log.error(e.toString());
+          print(e.toString());
           return left(const NoteFailure.unexpected());
         }
       },
@@ -120,10 +123,10 @@ class NoteRepository implements INoteRepository {
           ),
         )
         .onErrorReturnWith((e) {
-      if (e is FirebaseException && e.message.contains('PERMISSION_DENIED')) {
+      if (e is FirebaseException && e.message!.contains('PERMISSION_DENIED')) {
         return left(const NoteFailure.insufficientPermission());
       } else {
-        // log.error(e.toString());
+        print(e.toString());
         return left(const NoteFailure.unexpected());
       }
     });

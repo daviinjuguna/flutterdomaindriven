@@ -12,8 +12,8 @@ part 'auth_bloc.freezed.dart';
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc({
-    @required AuthFacade facade,
-  })  : _facade = facade,
+    required AuthFacade facade,
+  })   : _facade = facade,
         super(AuthState.initial());
 
   final AuthFacade _facade;

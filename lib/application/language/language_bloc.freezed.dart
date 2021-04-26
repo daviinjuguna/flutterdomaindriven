@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'language_bloc.dart';
 
@@ -9,16 +9,17 @@ part of 'language_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$LanguageEventTearOff {
   const _$LanguageEventTearOff();
 
-// ignore: unused_element
   _Started started() {
     return const _Started();
   }
 
-// ignore: unused_element
   _Change change(Locale locale) {
     return _Change(
       locale,
@@ -27,33 +28,36 @@ class _$LanguageEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $LanguageEvent = _$LanguageEventTearOff();
 
 /// @nodoc
 mixin _$LanguageEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult started(),
-    @required TResult change(Locale locale),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(Locale locale) change,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult started(),
-    TResult change(Locale locale),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(Locale locale)? change,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult started(_Started value),
-    @required TResult change(_Change value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Change value) change,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult started(_Started value),
-    TResult change(_Change value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Change value)? change,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -90,6 +94,7 @@ class __$StartedCopyWithImpl<$Res> extends _$LanguageEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Started implements _Started {
   const _$_Started();
 
@@ -108,23 +113,20 @@ class _$_Started implements _Started {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult started(),
-    @required TResult change(Locale locale),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(Locale locale) change,
   }) {
-    assert(started != null);
-    assert(change != null);
     return started();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult started(),
-    TResult change(Locale locale),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(Locale locale)? change,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (started != null) {
       return started();
     }
@@ -133,23 +135,20 @@ class _$_Started implements _Started {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult started(_Started value),
-    @required TResult change(_Change value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Change value) change,
   }) {
-    assert(started != null);
-    assert(change != null);
     return started(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult started(_Started value),
-    TResult change(_Change value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Change value)? change,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (started != null) {
       return started(this);
     }
@@ -179,17 +178,21 @@ class __$ChangeCopyWithImpl<$Res> extends _$LanguageEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object locale = freezed,
+    Object? locale = freezed,
   }) {
     return _then(_Change(
-      locale == freezed ? _value.locale : locale as Locale,
+      locale == freezed
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as Locale,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_Change implements _Change {
-  const _$_Change(this.locale) : assert(locale != null);
+  const _$_Change(this.locale);
 
   @override
   final Locale locale;
@@ -218,23 +221,20 @@ class _$_Change implements _Change {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult started(),
-    @required TResult change(Locale locale),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(Locale locale) change,
   }) {
-    assert(started != null);
-    assert(change != null);
     return change(locale);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult started(),
-    TResult change(Locale locale),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(Locale locale)? change,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (change != null) {
       return change(locale);
     }
@@ -243,23 +243,20 @@ class _$_Change implements _Change {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult started(_Started value),
-    @required TResult change(_Change value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Change value) change,
   }) {
-    assert(started != null);
-    assert(change != null);
     return change(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult started(_Started value),
-    TResult change(_Change value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Change value)? change,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (change != null) {
       return change(this);
     }
@@ -270,28 +267,25 @@ class _$_Change implements _Change {
 abstract class _Change implements LanguageEvent {
   const factory _Change(Locale locale) = _$_Change;
 
-  Locale get locale;
+  Locale get locale => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ChangeCopyWith<_Change> get copyWith;
+  _$ChangeCopyWith<_Change> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$LanguageStateTearOff {
   const _$LanguageStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _Success success(Locale locale) {
     return _Success(
       locale,
     );
   }
 
-// ignore: unused_element
   _Error error(String message) {
     return _Error(
       message,
@@ -300,37 +294,40 @@ class _$LanguageStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $LanguageState = _$LanguageStateTearOff();
 
 /// @nodoc
 mixin _$LanguageState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult success(Locale locale),
-    @required TResult error(String message),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(Locale locale) success,
+    required TResult Function(String message) error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult success(Locale locale),
-    TResult error(String message),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Locale locale)? success,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult success(_Success value),
-    @required TResult error(_Error value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult success(_Success value),
-    TResult error(_Error value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -367,6 +364,7 @@ class __$InitialCopyWithImpl<$Res> extends _$LanguageStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -385,26 +383,22 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult success(Locale locale),
-    @required TResult error(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(Locale locale) success,
+    required TResult Function(String message) error,
   }) {
-    assert(initial != null);
-    assert(success != null);
-    assert(error != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult success(Locale locale),
-    TResult error(String message),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Locale locale)? success,
+    TResult Function(String message)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -413,26 +407,22 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult success(_Success value),
-    @required TResult error(_Error value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
   }) {
-    assert(initial != null);
-    assert(success != null);
-    assert(error != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult success(_Success value),
-    TResult error(_Error value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -462,17 +452,21 @@ class __$SuccessCopyWithImpl<$Res> extends _$LanguageStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object locale = freezed,
+    Object? locale = freezed,
   }) {
     return _then(_Success(
-      locale == freezed ? _value.locale : locale as Locale,
+      locale == freezed
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as Locale,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_Success implements _Success {
-  const _$_Success(this.locale) : assert(locale != null);
+  const _$_Success(this.locale);
 
   @override
   final Locale locale;
@@ -501,26 +495,22 @@ class _$_Success implements _Success {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult success(Locale locale),
-    @required TResult error(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(Locale locale) success,
+    required TResult Function(String message) error,
   }) {
-    assert(initial != null);
-    assert(success != null);
-    assert(error != null);
     return success(locale);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult success(Locale locale),
-    TResult error(String message),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Locale locale)? success,
+    TResult Function(String message)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (success != null) {
       return success(locale);
     }
@@ -529,26 +519,22 @@ class _$_Success implements _Success {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult success(_Success value),
-    @required TResult error(_Error value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
   }) {
-    assert(initial != null);
-    assert(success != null);
-    assert(error != null);
     return success(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult success(_Success value),
-    TResult error(_Error value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (success != null) {
       return success(this);
     }
@@ -559,9 +545,10 @@ class _$_Success implements _Success {
 abstract class _Success implements LanguageState {
   const factory _Success(Locale locale) = _$_Success;
 
-  Locale get locale;
+  Locale get locale => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$SuccessCopyWith<_Success> get copyWith;
+  _$SuccessCopyWith<_Success> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -582,17 +569,21 @@ class __$ErrorCopyWithImpl<$Res> extends _$LanguageStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object message = freezed,
+    Object? message = freezed,
   }) {
     return _then(_Error(
-      message == freezed ? _value.message : message as String,
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_Error implements _Error {
-  const _$_Error(this.message) : assert(message != null);
+  const _$_Error(this.message);
 
   @override
   final String message;
@@ -621,26 +612,22 @@ class _$_Error implements _Error {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult success(Locale locale),
-    @required TResult error(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(Locale locale) success,
+    required TResult Function(String message) error,
   }) {
-    assert(initial != null);
-    assert(success != null);
-    assert(error != null);
     return error(message);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult success(Locale locale),
-    TResult error(String message),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Locale locale)? success,
+    TResult Function(String message)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(message);
     }
@@ -649,26 +636,22 @@ class _$_Error implements _Error {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult success(_Success value),
-    @required TResult error(_Error value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
   }) {
-    assert(initial != null);
-    assert(success != null);
-    assert(error != null);
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult success(_Success value),
-    TResult error(_Error value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this);
     }
@@ -679,7 +662,7 @@ class _$_Error implements _Error {
 abstract class _Error implements LanguageState {
   const factory _Error(String message) = _$_Error;
 
-  String get message;
+  String get message => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ErrorCopyWith<_Error> get copyWith;
+  _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
 }
